@@ -1,0 +1,35 @@
+﻿<Window x:Name="mainWindow" x:Class="ValorantAPIWPFTest.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ValorantAPIWPFTest"
+        mc:Ignorable="d"
+        Title="Valorant-API : Example" Height="450" Width="800" Loaded="mainWindow_Loaded" Initialized="mainWindow_Initialized">
+    <Grid RenderTransformOrigin="0.853,0.775">
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0,1" StartPoint="1,0">
+                <GradientStop Color="#FF0F1923"/>
+                <GradientStop Color="#FFFF4655" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <ListBox x:Name="lstAgents" Margin="10,90,0,10" Background="#FF0F1923" HorizontalAlignment="Left" Width="204" SelectionChanged="lstAgents_Selected" >
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <WrapPanel>
+                        <Image x:Name="agentIcon" Source ="{Binding DisplayIconSmall}" Width="32"></Image>
+                        <TextBlock Text="{Binding DisplayName}" FontWeight="Bold" Foreground="#ece8e1" VerticalAlignment="Center" />
+                    </WrapPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <Label FontFamily="./font/#VALORANT" x:Name="lblTitle" Content="Valorant-API Example" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top" Width="390" Height="34" FontSize="28"/>
+        <Label FontFamily="./font/#VALORANT" x:Name="lblAgents" Content="Agents" HorizontalAlignment="Left" Margin="10,56,0,0" VerticalAlignment="Top" Width="204" Height="34" FontSize="28"/>
+        <Grid Margin="219,90,0,10" HorizontalAlignment="Left" Width="559" Background="#FF0F1923">
+            <TextBlock FontFamily="./font/#VALORANT" x:Name="lblAgentName" Text="Test" FontWeight="Bold" Foreground="#ece8e1" Margin="163,11,10,0" FontSize="28" VerticalAlignment="Top" />
+            <Image x:Name="agentIcon"  Width="128" Height="128" Margin="12,11,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"></Image>
+            <TextBlock FontFamily="./font/#VALORANT" x:Name="lblDescription" TextWrapping="Wrap"  Text="Test" FontWeight="Bold" Foreground="#ece8e1" Margin="163,47,10,0" FontSize="18" VerticalAlignment="Top" />
+        </Grid>
+    </Grid>
+
+</Window>
